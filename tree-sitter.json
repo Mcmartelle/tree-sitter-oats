@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "oats",
+      "camelcase": "Oats",
+      "title": "OATS",
+      "scope": "source.oats",
+      "file-types": [
+        "oats"
+      ],
+      "injection-regex": "^oats$",
+      "class-name": "TreeSitterOats"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Or And Then Sequence",
+    "authors": [
+      {
+        "name": "Matthew Martelle",
+        "email": "matthew@martelle.dev",
+        "url": "https://www.martelle.dev/"
+      }
+    ],
+    "links": {
+      "repository": "https://notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
