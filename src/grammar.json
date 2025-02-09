@@ -1,0 +1,161 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "oats",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "instruction_line"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "breaker"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "clipboard_line"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          }
+        ]
+      }
+    },
+    "breaker": {
+      "type": "PATTERN",
+      "value": "[\\r\\n\\u2028\\u2029]"
+    },
+    "instruction_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "marker"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "instruction"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\r\\n\\u2028\\u2029]"
+        }
+      ]
+    },
+    "instruction": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "PATTERN",
+        "value": "[^\\r\\n\\u2028\\u2029]"
+      }
+    },
+    "marker": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "unordered"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "one_of"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "and_then"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "optional"
+        }
+      ]
+    },
+    "unordered": {
+      "type": "STRING",
+      "value": "&"
+    },
+    "one_of": {
+      "type": "STRING",
+      "value": "|"
+    },
+    "and_then": {
+      "type": "STRING",
+      "value": "~"
+    },
+    "optional": {
+      "type": "STRING",
+      "value": "?"
+    },
+    "clipboard_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "clipbo"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "clipboard_string"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\r\\n\\u2028\\u2029]"
+        }
+      ]
+    },
+    "clipbo": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "= "
+      }
+    },
+    "clipboard_string": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[^\\r\\n\\u2028\\u2029]"
+      }
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "//"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "PATTERN",
+              "value": "[^\\r\\n\\u2028\\u2029]"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "extras": [
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
+      "type": "STRING",
+      "value": " "
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

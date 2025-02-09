@@ -1,0 +1,134 @@
+[
+  {
+    "type": "breaker",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "clipboard_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "clipbo",
+          "named": true
+        },
+        {
+          "type": "clipboard_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "instruction",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "instruction_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "instruction",
+          "named": true
+        },
+        {
+          "type": "marker",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "marker",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "and_then",
+          "named": true
+        },
+        {
+          "type": "one_of",
+          "named": true
+        },
+        {
+          "type": "optional",
+          "named": true
+        },
+        {
+          "type": "unordered",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "breaker",
+          "named": true
+        },
+        {
+          "type": "clipboard_line",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "instruction_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "and_then",
+    "named": true
+  },
+  {
+    "type": "clipbo",
+    "named": true
+  },
+  {
+    "type": "clipboard_string",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "one_of",
+    "named": true
+  },
+  {
+    "type": "optional",
+    "named": true
+  },
+  {
+    "type": "unordered",
+    "named": true
+  }
+]
