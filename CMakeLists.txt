@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)
 project(tree-sitter-oats
         VERSION "0.1.0"
         DESCRIPTION "Or And Then Sequence"
-        HOMEPAGE_URL "https://notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists"
+        HOMEPAGE_URL "https://github.com/Mcmartelle/tree-sitter-oats"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

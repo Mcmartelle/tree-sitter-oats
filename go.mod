@@ -1,4 +1,4 @@
-module notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists
+module https://github.com/Mcmartelle/tree-sitter-oats
 
 go 1.22
 

@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 keywords = ["incremental", "parsing", "tree-sitter", "oats"]
 categories = ["parser-implementations", "parsing", "text-editors"]
-repository = "https://notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists"
+repository = "https://github.com/Mcmartelle/tree-sitter-oats"
 edition = "2021"
 autoexamples = false
 

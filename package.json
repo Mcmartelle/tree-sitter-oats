@@ -2,7 +2,7 @@
   "name": "tree-sitter-oats",
   "version": "0.1.0",
   "description": "Or And Then Sequence",
-  "repository": "https://notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists",
+  "repository": "https://github.com/Mcmartelle/tree-sitter-oats",
   "license": "MIT",
   "author": {
     "name": "Matthew Martelle",

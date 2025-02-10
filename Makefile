@@ -3,7 +3,7 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-oats
-HOMEPAGE_URL := https://notpublicyet.com/bruh-stop-making-me-fill-out-config-items-prematurely/tree-sitter-certainly-exists
+HOMEPAGE_URL := https://github.com/Mcmartelle/tree-sitter-oats
 VERSION := 0.1.0
 
 # repository
