@@ -25,7 +25,7 @@ module.exports = grammar({
     optional: $ => '?',
     clipboard_line: $ => seq($.clipbo, $.clipboard_string, newline),
     clipbo: $ => token.immediate('= '),
-    clipboard_string: $ => token.immediate(nonNewline),
+    clipboard_string: $ => token.immediate(repeat1(nonNewline)),
     comment: _ => token(seq('//', repeat1(nonNewline))),
   }
 });

@@ -118,8 +118,11 @@
     "clipboard_string": {
       "type": "IMMEDIATE_TOKEN",
       "content": {
-        "type": "PATTERN",
-        "value": "[^\\r\\n\\u2028\\u2029]"
+        "type": "REPEAT1",
+        "content": {
+          "type": "PATTERN",
+          "value": "[^\\r\\n\\u2028\\u2029]"
+        }
       }
     },
     "comment": {

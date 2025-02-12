@@ -219,7 +219,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n' &&
           lookahead != '\r' &&
           lookahead != 0x2028 &&
-          lookahead != 0x2029) ADVANCE(17);
+          lookahead != 0x2029) ADVANCE(19);
       END_STATE();
     case 4:
       if (lookahead == '/') ADVANCE(5);
@@ -229,7 +229,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '\n' &&
           lookahead != '\r' &&
           lookahead != 0x2028 &&
-          lookahead != 0x2029) ADVANCE(19);
+          lookahead != 0x2029) ADVANCE(20);
       END_STATE();
     case 6:
       if (eof) ADVANCE(7);
@@ -284,18 +284,38 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 17:
       ACCEPT_TOKEN(sym_clipboard_string);
-      END_STATE();
-    case 18:
-      ACCEPT_TOKEN(sym_clipboard_string);
-      if (lookahead == '/') ADVANCE(5);
-      END_STATE();
-    case 19:
-      ACCEPT_TOKEN(sym_comment);
+      if (lookahead == ' ') ADVANCE(17);
+      if (lookahead == '/') ADVANCE(18);
       if (lookahead != 0 &&
           lookahead != '\n' &&
           lookahead != '\r' &&
           lookahead != 0x2028 &&
           lookahead != 0x2029) ADVANCE(19);
+      END_STATE();
+    case 18:
+      ACCEPT_TOKEN(sym_clipboard_string);
+      if (lookahead == '/') ADVANCE(19);
+      if (lookahead != 0 &&
+          lookahead != '\n' &&
+          lookahead != '\r' &&
+          lookahead != 0x2028 &&
+          lookahead != 0x2029) ADVANCE(19);
+      END_STATE();
+    case 19:
+      ACCEPT_TOKEN(sym_clipboard_string);
+      if (lookahead != 0 &&
+          lookahead != '\n' &&
+          lookahead != '\r' &&
+          lookahead != 0x2028 &&
+          lookahead != 0x2029) ADVANCE(19);
+      END_STATE();
+    case 20:
+      ACCEPT_TOKEN(sym_comment);
+      if (lookahead != 0 &&
+          lookahead != '\n' &&
+          lookahead != '\r' &&
+          lookahead != 0x2028 &&
+          lookahead != 0x2029) ADVANCE(20);
       END_STATE();
     default:
       return false;
@@ -504,7 +524,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [47] = {.entry = {.count = 1, .reusable = false}}, REDUCE(aux_sym_instruction_repeat1, 2, 0, 0),
   [49] = {.entry = {.count = 2, .reusable = false}}, REDUCE(aux_sym_instruction_repeat1, 2, 0, 0), SHIFT_REPEAT(9),
   [52] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_marker, 1, 0, 0),
-  [54] = {.entry = {.count = 1, .reusable = false}}, SHIFT(13),
+  [54] = {.entry = {.count = 1, .reusable = true}}, SHIFT(13),
   [56] = {.entry = {.count = 1, .reusable = true}},  ACCEPT_INPUT(),
   [58] = {.entry = {.count = 1, .reusable = true}}, SHIFT(5),
   [60] = {.entry = {.count = 1, .reusable = true}}, SHIFT(6),
