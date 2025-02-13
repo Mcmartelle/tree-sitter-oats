@@ -3,14 +3,11 @@
 [
   (unordered)
   (and_then)
-] @keyword.storage.type
-
-[
   (optional)
   (one_of)
-] @keyword.control.conditional
+] @keyword
 
-(clipbo) @punctuation.delimiter
+(clipbo) @function
 
 (clipboard_string) @string.special
 
